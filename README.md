@@ -23,7 +23,7 @@ I have designed a Two Stage CMOS operational amplifier which operates at 1.8V po
   # Design Calculations:
    ### 1. Assumptions and Values used-
   
-       (1) Single ended output is taken
+     (1) Single ended output is taken
 
      (2) M1 and M2 are identical
 
@@ -40,53 +40,52 @@ I have designed a Two Stage CMOS operational amplifier which operates at 1.8V po
  ### 2. Calculation of miller capacitance C1 –
 
  
-   C1>=  0.22  C2 (for the phase margin of 60°)
+      C1>=  0.22  C2 (for the phase margin of 60°)
 
-  C1>=440 fF  For calculations we are using 800 fF
+      C1>=440 fF  For calculations we are using 800 fF
 
   ### 3. Calculation of current through M5 (I5 )–
 
+     I5 >= slew rate x  C1
   
-    I5 >= slew rate x  C1
-
-  I5 >= 16 uA
-
-  So we are using I5 = 20 uA
+     I5 >= 16 uA
+  
+     So we are using I5 = 20 uA
+ 
   ### 4. Calculation of (W/L)1,2 –
   
 
     gm(1,2) = Gain bandwidth x C1 x 2π
-
-  gm(1,2) = 160 uA/V
-
-
- (W/L)1,2 = g^2m(1,2) / UnCox I5
-
-  (W/L)1,2 = 5 
+    
+    gm(1,2) = 160 uA/V
+    
+    (W/L)1,2 = g^2m(1,2) / UnCox I5
+    
+    (W/L)1,2 = 5 
 
   ### 5. Calculation of (W/L)3 –
 
   
-   (W/L)3,4) 	= 2 I3 / UpCox[Vdd-ICMR(+) - |Vtp|+Vtn]
+      (W/L)3,4) 	= 2 I3 / UpCox[Vdd-ICMR(+) - |Vtp|+Vtn]
 
- (W/L)3,4 = 14 
+      (W/L)3,4 = 14 
 
  ### 6. Calculation of VDsat of M5 MOSFET- 
 
  
-  VDsat >= ICMR(-) – (I5 / UnCox (W/L)1)^1/2 - Vtn
+      VDsat >= ICMR(-) – (I5 / UnCox (W/L)1)^1/2 - Vtn
 
- VDsat >=10 mV
+      VDsat >=10 mV
 
- So we are taking VDsat =100 mV bcz to design M5 with VDsat = 10 mV we are required very large MOSFET.
+      So we are taking VDsat =100 mV bcz to design M5 with VDsat = 10 mV we are required very large MOSFET.
 
  ### 7. Calculation of (W/L)5,6 –
 
  
 
- (W/L)5,6 = 2 I5 / Un Cox (VDsat)^2
+      (W/L)5,6 = 2 I5 / Un Cox (VDsat)^2
 
-(W/L)5,6 = 12
+      (W/L)5,6 = 12
 
 ### 8. Calculation of (W/L)7 –
 
@@ -108,11 +107,11 @@ I have designed a Two Stage CMOS operational amplifier which operates at 1.8V po
   ### 9. Calculation of (W/L)8 –
 
   
-(W/L)7 / (W/L)4 = I7 / I4
- I7 = I8 = 125 uA
- Vgs,8 = Vgs,6
- (W/L)8 / (W/L)6 = I8 / I6
-  (W/L)8 = 75
+       (W/L)7 / (W/L)4 = I7 / I4
+       I7 = I8 = 125 uA
+       Vgs,8 = Vgs,6
+      (W/L)8 / (W/L)6 = I8 / I6
+      (W/L)8 = 75
 
   ### 10. Theoretical values of W and L for All the MOSFET-
   
@@ -125,7 +124,7 @@ I have designed a Two Stage CMOS operational amplifier which operates at 1.8V po
 
 ### 11. Practical values of (W/L) ratio for MOSFET-
 
-    MOSFET	                W	                 L
+     MOSFET	                W	                 L
       M1,2	             3.5 um	             500nm
       M3,4	             7.2 um	             500nm
       M5,6	              6 um	             500nm
@@ -133,20 +132,10 @@ I have designed a Two Stage CMOS operational amplifier which operates at 1.8V po
        M8	               38 um	             500nm
 ## 12. Simulation Results:
 
-  (1) Gain – Vin,1-Vin,2 = Vid = 198.4 uV
+     (1) Gain – Vin,1-Vin,2 = Vid = 198.4 uV  Vout= 198.2 mV  Gain = Vout/Vid = 998.99 (Approximately 1000 as per our requirement) Gain (In DB) = 20 Log10(998.99)=59.9 DB (Approximately 60 DB as per our requirement)
 
-Vout= 198.2 mV
+    (2) Gain bandwidth – Gain bandwidth = 31.54 MHz (Fulfilling our requirement)
 
-Gain = Vout/Vid = 998.99 (Approximately 1000 as per our requirement)
-
-Gain (In DB) = 20 Log10(998.99)=59.9 DB (Approximately 60 DB as per our requirement)
-
-(2) Gain bandwidth –
-
-Gain bandwidth = 31.54 MHz (Fulfilling our requirement)
-
-(3) Phase margin –
-
-Phase margin = 61.56° (Fulfilling our requirement)
+    (3) Phase margin – Phase margin = 61.56° (Fulfilling our requirement)
   
   
