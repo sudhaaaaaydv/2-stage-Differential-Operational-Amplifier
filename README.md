@@ -22,6 +22,7 @@ I have designed a Two Stage CMOS operational amplifier which operates at 1.8V po
 
   # Design Calculations:
    ### 1. Assumptions and Values used-
+  
        (1) Single ended output is taken
 
      (2) M1 and M2 are identical
@@ -37,17 +38,22 @@ I have designed a Two Stage CMOS operational amplifier which operates at 1.8V po
      (7) Lmin=180nm but we are using L=500nm for lamda to be very small.
 
  ### 2. Calculation of miller capacitance C1 –
+
+ 
    C1>=  0.22  C2 (for the phase margin of 60°)
 
   C1>=440 fF  For calculations we are using 800 fF
 
   ### 3. Calculation of current through M5 (I5 )–
+
+  
     I5 >= slew rate x  C1
 
   I5 >= 16 uA
 
   So we are using I5 = 20 uA
   ### 4. Calculation of (W/L)1,2 –
+  
 
     gm(1,2) = Gain bandwidth x C1 x 2π
 
@@ -59,11 +65,15 @@ I have designed a Two Stage CMOS operational amplifier which operates at 1.8V po
   (W/L)1,2 = 5 
 
   ### 5. Calculation of (W/L)3 –
+
+  
    (W/L)3,4) 	= 2 I3 / UpCox[Vdd-ICMR(+) - |Vtp|+Vtn]
 
  (W/L)3,4 = 14 
 
- ### 6. Calculation of VDsat of M5 MOSFET-
+ ### 6. Calculation of VDsat of M5 MOSFET- 
+
+ 
   VDsat >= ICMR(-) – (I5 / UnCox (W/L)1)^1/2 - Vtn
 
  VDsat >=10 mV
@@ -72,11 +82,15 @@ I have designed a Two Stage CMOS operational amplifier which operates at 1.8V po
 
  ### 7. Calculation of (W/L)5,6 –
 
+ 
+
  (W/L)5,6 = 2 I5 / Un Cox (VDsat)^2
 
 (W/L)5,6 = 12
 
 ### 8. Calculation of (W/L)7 –
+
+
      For the phase margin to be 60° gm,6 >=10 gm,1
 
      gm,6 >= 1600 uA/V
@@ -92,6 +106,8 @@ I have designed a Two Stage CMOS operational amplifier which operates at 1.8V po
      (W/L)7 = 172
 
   ### 9. Calculation of (W/L)8 –
+
+  
 (W/L)7 / (W/L)4 = I7 / I4
  I7 = I8 = 125 uA
  Vgs,8 = Vgs,6
